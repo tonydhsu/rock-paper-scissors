@@ -14,17 +14,27 @@
   <header>
     <h1>Rock, Chuck, Bruce</h1>
   </header>
-  <section class="left-side-box" id="leftSideBox">Enter Your Name and Press Enter!
+  <section class="left-side-box" id="leftSideBox">Enter Your Name and Avatar and Press Enter!
    <input type="input" class="name-input" id="nameInput" maxLength="10">
-    <p class="user-emoji">🐶</p>
+    <select class="select-emoji" id="selectEmoji">
+      <option value="🐶">🐶</option>
+      <option value="🐱">🐱</option>
+      <option value="🐼">🐼</option>
+      <option value="🦊">🦊</option>
+      <option value="👻">👻</option>
+      <option value="🤖">🤖</option>
+      <option value="👽">👽</option>
+      <option value="🐵">🐵</option>
+      <option value="🐰">🐰</option>
+    </select>
   </section>
   <section class="right-side-box" id="rightSideBox">
     HAL 9000
     <img class="hal-img" src="assets/hal.png" alt="hal">
   </section>
   <section class="scoreboard" id="scoreboard">
-    <div class="player-label" id="humanLabel">Player</div>
-    <p class="mini-user-emoji">🐶</p>
+    <div class="player-label" id="playerLabel"></div>
+    <p class="mini-user-emoji" id="miniUserEmoji"></p>
     <span class="human-score" id="humanScore">0</span><span>:</span><span class="comp-score" id="compScore">0</span>
     <div class="hal-label" id="compLabel">HAL 9000</div>
     <img class="mini-hal" src="assets/hal.png">

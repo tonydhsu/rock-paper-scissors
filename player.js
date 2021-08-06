@@ -1,3 +1,4 @@
+
 class Player {
   constructor(name, avatar, wins) {
     this.name = name;

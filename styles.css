@@ -50,7 +50,7 @@ header h1 {
 .player-label {
   position: absolute;
   top: 40px;
-  left: 15px;
+  /* left: 10px; */
   
 }
 
@@ -85,7 +85,6 @@ header h1 {
   height: 180px;
   border: 5px solid #BF9004;
   border-radius: 50%;
-  
 }
 
 .img-btn:hover {
@@ -105,20 +104,28 @@ header h1 {
 }
 
 .left-side-box {
+  
   position: absolute;
   top: 90px;
   left: 20px;
 }
 
-.user-emoji {
-  top: 150px;
-  font-size: 100px;
+.name-input {
+  color: #F2CB05;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+  background-color: #530101;
 }
 
-.name-input {
-  height: 30px;
-  font-size: 10px;
-  border-radius: 5px;
+
+.select-emoji {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  font-size: 30px;
+  background-color: #530101;
+  border: none;
 }
 
 .right-side-box {
