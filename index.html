@@ -13,14 +13,24 @@
 <body>
   <header>
     <h1>Rock, Chuck, Bruce</h1>
-    <p>A variation on the Rock, Paper, Scissors Game!</p>
   </header>
-  <section class="scoreboard" id="scoreboard">
-    <div class="human-label" id="humanLabel">Human</div>
-    <div class="comp-label" id="compLabel">Computer</div>
-    <span class="human-score" id="humanScore">0</span><span>:</span><span class="comp-score" id="compScore">0</span>
+  <section class="left-side-box" id="leftSideBox">Enter Your Name and Press Enter!
+   <input type="input" class="name-input" id="nameInput" maxLength="10">
+    <p class="user-emoji">🐶</p>
   </section>
-  <div class="hero-text">Choose your Hero!</div>
+  <section class="right-side-box" id="rightSideBox">
+    HAL 9000
+    <img class="hal-img" src="assets/hal.png" alt="hal">
+  </section>
+  <section class="scoreboard" id="scoreboard">
+    <div class="player-label" id="humanLabel">Player</div>
+    <p class="mini-user-emoji">🐶</p>
+    <span class="human-score" id="humanScore">0</span><span>:</span><span class="comp-score" id="compScore">0</span>
+    <div class="hal-label" id="compLabel">HAL 9000</div>
+    <img class="mini-hal" src="assets/hal.png">
+  </section>
+  <p></p>
+  <div class="hero-text">Choose your Fighter!</div>
   <section class="choices" id="choices">
     <div>
       <input type="image" class="img-btn" id="rock" src="assets/rock.png" alt="the rock"
@@ -36,5 +46,6 @@
 
   </section>
   <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
