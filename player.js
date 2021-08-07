@@ -33,9 +33,9 @@ var computer = new Player("T-1000", "💀", 0)
 
 human.saveWinsToStorage();
 human.retrieveWinsFromStorage();
-computer.takeTurn();
 
 
-console.log(human)
 
-console.log(computer)
+// console.log(human)
+
+// console.log(computer)

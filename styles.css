@@ -75,9 +75,8 @@ header h1 {
   text-align: center;
 }
 
-.choices div{
-  display: inline-block;
-  padding: 10px 40px;
+.choices {
+  padding: 50px;
 }
 
 .img-btn {
@@ -85,6 +84,7 @@ header h1 {
   height: 180px;
   border: 5px solid #BF9004;
   border-radius: 50%;
+  margin: 0 20px;
 }
 
 .img-btn:hover {
