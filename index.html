@@ -14,7 +14,7 @@
   <header>
     <h1>Rock, Chuck, Bruce</h1>
   </header>
-  <section class="left-side-box" id="leftSideBox">Enter Your Name and Avatar and Press Enter!
+  <section class="left-side-box" id="leftSideBox">Enter Your First Name and Avatar and Press Enter!
    <input type="input" class="name-input" id="nameInput" maxLength="10">
     <select class="select-emoji" id="selectEmoji">
       <option value="🐶">🐶</option>
@@ -32,10 +32,19 @@
     HAL 9000
     <img class="hal-img" src="assets/hal.png" alt="hal">
   </section>
+  <section class="rules-box">
+    <p>Classic Rules: </p>
+    <p>Rock beats Bruce</p>
+    <p>Chuck beats Rock</p>
+    <p>Bruce beats Chuck</p>
+  </section>
+  <section class="select-difficulty" id="selectDifficulty">Select Difficulty:
+  </section>
+  <input type="image" class="difficulty-hal-img" id="difficultyHalImg" src="assets/hal.png">
   <section class="scoreboard" id="scoreboard">
     <div class="player-label" id="playerLabel"></div>
     <p class="mini-user-emoji" id="miniUserEmoji"></p>
-    <span class="human-score" id="humanScore">0</span><span>:</span><span class="comp-score" id="compScore">0</span>
+    <span class="player-score" id="playerScore"></span><span>:</span><span class="comp-score" id="compScore"></span>
     <div class="hal-label" id="compLabel">HAL 9000</div>
     <img class="mini-hal" src="assets/hal.png">
   </section>
@@ -45,9 +54,8 @@
       <input type="image" class="img-btn" id="rock" src="assets/rock.png" alt="the rock">
       <input type="image" class="img-btn" id="chuck" src="assets/chuck.png" alt="chuck">
       <input type="image" class="img-btn" id="bruce" src="assets/bruce.png" alt="bruce">
-  </section>
-  <section class="vs-screen" id="vsScreen">
-
+      <section class="win-screen" id="winScreen">
+      </section>
   </section>
   <script type="text/javascript" src="player.js"></script>
   <script type="text/javascript" src="main.js"></script>

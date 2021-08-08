@@ -15,6 +15,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80px;
   padding: 20px;
   background-color: #0460D9;
 
@@ -24,15 +25,47 @@ header h1 {
   font-size: 50px;
 }
 
+.rules-box {
+  position: relative;
+  left: 300px;
+  top: 50px;
+  font-size: 25px;
+  color: #D90404;
+}
+
+.rules-box p {
+  width: 200px;
+}
+
+.select-difficulty {
+  position: absolute;
+  right: 350px;
+  top: 150px;
+  font-size: 30px;
+}
+
+.difficulty-hal-img {
+  position: absolute;
+  width: 60px;
+  top: 200px;
+  right: 450px;
+}
+
+.difficulty-hal-img:hover {
+  transform: scale(1.1);
+  transition: .5s;
+}
+
 .scoreboard {
   position: relative;
   font-size: 20px;
   width: 300px;
   border: 2px solid #F25E6B;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 10px;
   text-align: center;
   padding: 15px 20px;
+  top: -50px;
 }
 
 .scoreboard p, img {
@@ -67,7 +100,7 @@ header h1 {
 }
 
 .hero-text {
-  margin-top: 50px;
+  margin-top: 10px;
   font-size: 20px;
 }
 
@@ -77,6 +110,7 @@ header h1 {
 
 .choices {
   padding: 50px;
+  margin-top: -30px;
 }
 
 .img-btn {
@@ -106,16 +140,16 @@ header h1 {
 .left-side-box {
   
   position: absolute;
-  top: 90px;
+  top: 80px;
   left: 20px;
 }
 
 .name-input {
-  color: #F2CB05;
+  color: #0460D9;
   height: 30px;
   font-size: 13px;
   border-radius: 5px;
-  background-color: #530101;
+  background-color: #BF9004;
 }
 
 
@@ -137,4 +171,17 @@ header h1 {
   position:absolute;
   right: 20px;
   top: 100px;
+}
+
+.win-screen {
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  bottom: 8rem;
+  left: 34rem;
+}
+
+
+.hidden {
+  display: none;
 }
