@@ -1,8 +1,8 @@
 
 class Player {
-  constructor(name,wins) {
+  constructor(name) {
     this.name = name;
-    this.wins = 0;
+    
   }
 
   playerGetsOne() {
@@ -24,7 +24,7 @@ class Player {
     console.log(parsedWins)
   }
   
-  
+
   takeTurn() {
     var choices = ["rock", "chuck", "bruce"];
     var randomChoice = Math.floor(Math.random()*3);
@@ -32,14 +32,7 @@ class Player {
     
   }
 }
-// var human = new Player("Tony", "🐶", 5)
-// var computer = new Player("T-1000", "💀", 0)
 
-// human.saveWinsToStorage();
-// human.retrieveWinsFromStorage();
+// module.exports = Player;
+export default Player;
 
-
-
-// console.log(human)
-
-// console.log(computer)

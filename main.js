@@ -1,3 +1,5 @@
+import Player from "./player.js";
+import Game from "./game.js";
 //*************QUERY SELECTORS**********
 
 var nameInput = document.getElementById('nameInput')
@@ -21,46 +23,52 @@ window.addEventListener('keypress', changeName);
 
 
 //**************FUNCTIONS********* */
-setScoreToZero();
+
 
 function changeName(e) {
   if (e.key === 'Enter') {
   miniPlayerName.innerText = nameInput.value;
   miniEmoji.innerText = emoji.value;
-  console.log(humanPlayer)
+  
   }
 }
-function setScoreToZero() {
-  playerScore.innerText = humanPlayer.wins;
-  computerScore.innerText = computerPlayer.wins;
-}
+// function setScoreToZero() {
+//   playerScore.innerHTML = humanPlayer.wins;
+//   computerScore.innerHTML = computerPlayer.wins;
+// }
 
 function userChoice(event) {
-  var playerPick = event.target.id;
-  game(playerPick);
+  var playerPick = event.target.id
+  var game = new Game(playerPick)
+  var whoWins = game.determineWinner() 
+  if (whoWins === 'player') {
+    winner.innerHTML = `${nameInput.value} Wins! ${playerPick} beats ${game.compPick} `
+    playerScore.innerHTML = game.playerWins;
+  } else if (whoWins === 'computer') {
+    winner.innerHTML = `${computerPlayer.name} Wins! ${game.compPick} beats ${playerPick}`
+    compScore.innerHTML = game.compWins;
+  }
+ 
 }
 
-function game(playerChoice) {
-  var compChoice = computerPlayer.takeTurn();
-  var playerAndCompChoice = playerChoice + compChoice
 
-  if (playerAndCompChoice === 'rockbruce' || playerAndCompChoice === 'chuckrock' ||
-      playerAndCompChoice === 'brucechuck') {
-      winner.innerText = `${nameInput.value} Wins! ${playerChoice} Beats ${compChoice}!`
-      playerScore.innerText = humanPlayer.playerGetsOne();
-    } else if (playerAndCompChoice === 'brucerock' || playerAndCompChoice === 'rockchuck' ||
-               playerAndCompChoice === 'chuckbruce') {
-        winner.innerText = `${computerPlayer.name} Wins! ${compChoice} Beats ${playerChoice}!`
-        computerScore.innerText = computerPlayer.playerGetsOne();
-      }
 
-}
+// function game(playerChoice) {
+//   var compChoice = computerPlayer.takeTurn();
+//   var playerAndCompChoice = playerChoice + compChoice
 
-// function compPick() {
-//   var choices = ["rock", "chuck", "bruce"]
-//   var randomChoice = Math.floor(Math.random()*3);
-//  return (choices[randomChoice]);
+//   if (playerAndCompChoice === 'rockbruce' || playerAndCompChoice === 'chuckrock' ||
+//       playerAndCompChoice === 'brucechuck') {
+//       winner.innerText = `${nameInput.value} Wins! ${playerChoice} Beats ${compChoice}!`
+//       // playerScore.innerHTML = humanPlayer.playerGetsOne();
+//     } else if (playerAndCompChoice === 'brucerock' || playerAndCompChoice === 'rockchuck' ||
+//                playerAndCompChoice === 'chuckbruce') {
+//         winner.innerText = `${computerPlayer.name} Wins! ${compChoice} Beats ${playerChoice}!`
+//         // computerScore.innerHTML = computerPlayer.playerGetsOne();
+//       }
+
 // }
+
 
 
 

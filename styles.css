@@ -47,13 +47,38 @@ header h1 {
 .difficulty-hal-img {
   position: absolute;
   width: 60px;
-  top: 200px;
+  top: 210px;
   right: 450px;
 }
 
 .difficulty-hal-img:hover {
   transform: scale(1.1);
   transition: .5s;
+}
+
+.difficulty-t800-img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 200px;
+  right: 340px;
+}
+
+.difficulty-t800-img:hover {
+  transform: scale(1.1);
+  transition: .5s;
+}
+
+.classic-text {
+  position: absolute;
+  top: 280px;
+  right: 460px;
+}
+
+.advanced-text {
+  position: absolute;
+  top: 280px;
+  right: 340px;
 }
 
 .scoreboard {
@@ -177,8 +202,8 @@ header h1 {
   position: absolute;
   text-align: center;
   font-size: 30px;
-  bottom: 8rem;
-  left: 34rem;
+  bottom: 90px;
+  left: 530px;
 }
 
 
