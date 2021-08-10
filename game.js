@@ -8,7 +8,20 @@ class Game {
     this.compPick = compPick;
     this.playerWins = 0;
     this.compWins = 0;
-    this.fighters = ["rock", "chuck", "scissors"]
+    this.fighters = [
+      {
+        name: 'rock',
+        img:  './assets/rock.png'
+      },
+      {
+        name: 'chuck',
+        img: './assets/chuck.png'
+      },
+      {
+        name: 'bruce',
+        img: './assets/bruce.png'
+      }
+    ]
   }
 
   determineWinner() {

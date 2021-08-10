@@ -14,6 +14,9 @@ var bruce = document.getElementById('bruce');
 var threeImg = document.querySelectorAll('.img-btn');
 var choices = document.querySelector('#choices')
 var winner = document.getElementById('winScreen')
+var choiceImgs = document.getElementById('choiceImgs');
+var playerChoiceImg = document.getElementById('playerChoiceImg');
+var compChoiceImg = document.getElementById('compChoiceImg');
 
 // var computerPlayer = new Player('Hal 9000', compScore)
 // var humanPlayer = new Player(nameInput.value, playerScore)
@@ -25,6 +28,7 @@ window.addEventListener('keypress', changeName);
 
 //**************FUNCTIONS********* */
 console.log(threeImg)
+console.log(choiceImgs, "choiceimg")
 
 function changeName(e) {
   if (e.key === 'Enter') {
@@ -38,14 +42,7 @@ function userChoice(event) {
   var playerPick = event.target.id
   var game = new Game(playerPick)
   var whoWins = game.determineWinner() 
-  for (var i = 0; i < threeImg.length; i++) {
-    threeImg.hidden = true;
-    if (game.playerPick === threeImg[i].id) {
-      console.log(threeImg[i], 'playerpic')
-      // threeImg[i].hidden = true;
-    }
-     }
-    
+  
   if (whoWins === 'player') {
     winner.innerHTML = `${nameInput.value} Wins! ${playerPick} beats ${game.compPick} `
     playerScore.innerHTML = game.playerWins
@@ -55,8 +52,35 @@ function userChoice(event) {
   } else if (game.playerPick === game.compPick) {
     winner.innerHTML = 'Draw!'
   }
+  
+  rock.hidden = 'true';
+  chuck.hidden = 'true';
+  bruce.hidden = 'true';
+  displayPlayerChoice();
+  displayComputerChoice();
+    
+  function displayPlayerChoice() {
+    for (var i = 0; i < game.fighters.length; i++) {
+      if (game.playerPick === game.fighters[i].name) {
+        playerChoiceImg.innerHTML =
+           `<img class="player-choice" src=${game.fighters[i].img}>`
+         }
+  
+    }
+  }
 
+  function displayComputerChoice() {
+    for (var i = 0; i < game.fighters.length; i++) {
+      if(game.compPick === game.fighters[i].name) {
+        compChoiceImg.innerHTML = 
+        `<img class="comp-choice" src=${game.fighters[i].img}>`
+      }
+    }
+  }
 }
+
+
+
   
   
 
