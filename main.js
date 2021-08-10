@@ -1,7 +1,7 @@
 import Player from "./player.js";
 import Game from "./game.js";
 //*************QUERY SELECTORS**********
-
+ 
 var nameInput = document.getElementById('nameInput')
 var miniPlayerName = document.getElementById('playerLabel')
 var playerScore = document.getElementById('playerScore')
@@ -15,117 +15,100 @@ var threeImg = document.querySelectorAll('.img-btn');
 var choices = document.querySelector('#choices')
 var winner = document.getElementById('winScreen')
 var choiceImgs = document.getElementById('choiceImgs');
-var playerChoiceImg = document.getElementById('playerChoiceImg');
+var choiceImg = document.getElementById('choiceImg');
 var compChoiceImg = document.getElementById('compChoiceImg');
-
-// var computerPlayer = new Player('Hal 9000', compScore)
-// var humanPlayer = new Player(nameInput.value, playerScore)
-
+var choicesSection = document.getElementById('choicesSection');
+var chooseFighterText = document.getElementById('chooseFighterText')
+var playAgain = document.getElementById('playAgainButton');
+var playAgainSection = document.getElementById('playAgainSection');
+ 
 //************EVENT LISTENERS******* */
-choices.addEventListener('click', userChoice);
+choices.addEventListener('click', startGame);
 window.addEventListener('keypress', changeName);
-
-
+playAgain.addEventListener('click', resetBoard);
+ 
+ 
 //**************FUNCTIONS********* */
-console.log(threeImg)
-console.log(choiceImgs, "choiceimg")
-
+ 
 function changeName(e) {
-  if (e.key === 'Enter') {
-  miniPlayerName.innerText = nameInput.value;
-  miniEmoji.innerText = emoji.value;
-  }
+ if (e.key === 'Enter') {
+ miniPlayerName.innerText = nameInput.value;
+ miniEmoji.innerText = emoji.value;
+ }
 }
-
-function userChoice(event) {
-  event.preventDefault()
-  var playerPick = event.target.id
-  var game = new Game(playerPick)
-  var whoWins = game.determineWinner() 
-  
+ 
+function startGame(event) {
+ event.preventDefault()
+ var playerPick = event.target.id
+ var game = new Game(playerPick)
+ var whoWins = game.determineWinner()
   if (whoWins === 'player') {
-    winner.innerHTML = `${nameInput.value} Wins! ${playerPick} beats ${game.compPick} `
-    playerScore.innerHTML = game.playerWins
-  } else if (whoWins === 'computer') {
-    winner.innerHTML = `${game.computerPlayer.name} Wins! ${game.compPick} beats ${playerPick}`
-    compScore.innerHTML = game.compWins;
-  } else if (game.playerPick === game.compPick) {
-    winner.innerHTML = 'Draw!'
-  }
-  
-  rock.hidden = 'true';
-  chuck.hidden = 'true';
-  bruce.hidden = 'true';
-  displayPlayerChoice();
-  displayComputerChoice();
-    
+   winner.innerHTML = `${nameInput.value} Wins! ${playerPick} beats ${game.compPick} `
+   playerScore.innerHTML = game.playerWins
+ } else if (whoWins === 'computer') {
+   winner.innerHTML = `${game.computerPlayer.name} Wins! ${game.compPick} beats ${playerPick}`
+   compScore.innerHTML = game.compWins;
+ } else if (game.playerPick === game.compPick) {
+   winner.innerHTML = 'Draw!'
+ }
+ 
+ displayPlayerChoice();
   function displayPlayerChoice() {
-    for (var i = 0; i < game.fighters.length; i++) {
-      if (game.playerPick === game.fighters[i].name) {
-        playerChoiceImg.innerHTML =
-           `<img class="player-choice" src=${game.fighters[i].img}>`
-         }
+   rock.hidden = true;
+   chuck.hidden = true;
+   bruce.hidden = true;
+   playAgainSection.classList.remove('hidden');
+   chooseFighterText.hidden = true;
+   for (var i = 0; i < game.fighters.length; i++) {
+     if (game.playerPick === game.fighters[i].name) {
+       choices.innerHTML +=
+          `<input type="image" class="img-btn" id="choiceImg" src=${game.fighters[i].img}>`
+        }
+     if(game.compPick === game.fighters[i].name) {
+       choices.innerHTML +=
+       `<input type="image" class="img-btn" id="choiceImg" src=${game.fighters[i].img}>`
+     }
+        
+       }   
+ }// if (game.playerPick === 'rock') {
+   // function resetBoard() {
+   //   choices.innerHTML +=
+   //   `<input type="image" class="img-btn" id="rock" src="assets/rock.png" alt="the rock">
+   //   <input type="image" class="img-btn" id="chuck" src="assets/chuck.png" alt="chuck">
+   //   <input type="image" class="img-btn" id="bruce" src="assets/bruce.png" alt="bruce">`
+ 
+     // rock.hidden = false;
+     // chuck.hidden = false;
+     // bruce.hidden = false;
+     // choiceImg.hidden = true;
+     // compChoiceImg.hidden = true;
+ //   choices.innerHTML += `<img class="player-choice" src=${game.fighters[i].img}>
+ //   <img class="comp-choice" src=${game.fighters[i].img}>`
   
-    }
-  }
-
-  function displayComputerChoice() {
-    for (var i = 0; i < game.fighters.length; i++) {
-      if(game.compPick === game.fighters[i].name) {
-        compChoiceImg.innerHTML = 
-        `<img class="comp-choice" src=${game.fighters[i].img}>`
-      }
-    }
-  }
+ // }
+ // function displayComputerChoice() {
+ //   for (var i = 0; i < game.fighters.length; i++) {
+ //   }
+ //   setTimeout(resetBoard, 2000);
+ // }
+ // setTimeout(resetBoard(), 2000);
+ 
+ // choicesSection.hidden = true;
 }
-
-
-
-  
-  
-
-
-// function showPlayerChoice (playerPick) {
-//   if (playerPick === "rock") {
-//     console.log(playerPick, "rock")
-//     hide(chuck);
-//     hide(bruce)
-//   } else if (playerPick === "chuck") {
-//     hide(bruce)
-//     hide(rock)
-//     console.log(playerPick, "chuck")
-//   } else if (playerPick === "bruce") {
-//     hide(rock)
-//     hide(chuck)
-//     console.log(playerPick, "bruce")
-//   }
-// }
-
-
-
-// function game(playerChoice) {
-//   var compChoice = computerPlayer.takeTurn();
-//   var playerAndCompChoice = playerChoice + compChoice
-
-//   if (playerAndCompChoice === 'rockbruce' || playerAndCompChoice === 'chuckrock' ||
-//       playerAndCompChoice === 'brucechuck') {
-//       winner.innerText = `${nameInput.value} Wins! ${playerChoice} Beats ${compChoice}!`
-//       // playerScore.innerHTML = humanPlayer.playerGetsOne();
-//     } else if (playerAndCompChoice === 'brucerock' || playerAndCompChoice === 'rockchuck' ||
-//                playerAndCompChoice === 'chuckbruce') {
-//         winner.innerText = `${computerPlayer.name} Wins! ${compChoice} Beats ${playerChoice}!`
-//         // computerScore.innerHTML = computerPlayer.playerGetsOne();
-//       }
-
-// }
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 function hide(element) {
-  element.classList.add('hidden')
+ element.classList.add('hidden')
+}
+ 
+function show(element) {
+ element.classList.remove('hidden')
 }
 
-function show(element) {
-  element.classList.remove('hidden')
-}
