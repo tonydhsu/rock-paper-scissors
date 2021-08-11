@@ -26,10 +26,13 @@ var playAgainSection = document.getElementById('playAgainSection');
 choices.addEventListener('click', startGame);
 window.addEventListener('keypress', changeName);
 playAgain.addEventListener('click', resetBoard);
- 
- 
+
+
 //**************FUNCTIONS********* */
- 
+
+var game = new Game()
+
+
 function resetBoard() {
   choiceImg.hidden = true;
   rock.hidden = false;
@@ -44,7 +47,11 @@ function changeName(e) {
  miniEmoji.innerText = emoji.value;
  }
 }
-var game = new Game()
+window.onload = showScore()
+function showScore() {
+  playerScore.innerHTML = game.humanPlayer.wins
+  compScore.innerHTML = game.computerPlayer.wins;
+}
 
 function startGame(event) {
   event.preventDefault()
