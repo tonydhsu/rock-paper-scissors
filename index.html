@@ -1,37 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
-  <title>Rock Paper Scissor!</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="./styles.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+ <title>Rock Paper Scissor!</title>
 </head>
 <body>
-  <header>
-    <h1>Rock, Chuck, Bruce</h1>
-    <p>A variation on the Rock, Paper, Scissors Game!</p>
-  </header>
-  <section class="scoreboard" id="scoreboard">
-    <div class="human-label" id="humanLabel">Human</div>
-    <div class="comp-label" id="compLabel">Computer</div>
-    <span class="human-score" id="humanScore">0</span><span>:</span><span class="comp-score" id="compScore">0</span>
-  </section>
-  <div class="hero-text">Choose your Hero!</div>
-  <section class="choices" id="choices">
-    <div>
-      <input type="image" id="rock" src="assets/rock.png" alt="the rock"
-    </div>
-    <div>
-      <input type="image" id="chuck" src="assets/chuck.png" alt="chuck"
-    </div>
-    <div>
-      <input type="image" id="bruce" src="assets/bruce.png" alt="bruce"
-    </div> 
-  </section>
-  
+ <header>
+   <h1>Rock, Chuck, Bruce</h1>
+ </header>
+ <section class="left-side-box" id="leftSideBox">Enter Your First Name and Avatar and Press Enter!
+  <input type="input" class="name-input" id="nameInput" maxLength="10">
+   <select class="select-emoji" id="selectEmoji">
+     <option value="🐶">🐶</option>
+     <option value="🐱">🐱</option>
+     <option value="🐼">🐼</option>
+     <option value="🦊">🦊</option>
+     <option value="👻">👻</option>
+     <option value="🤖">🤖</option>
+     <option value="👽">👽</option>
+     <option value="🐵">🐵</option>
+     <option value="🐰">🐰</option>
+   </select>
+   <button imput type="button" class="reset-btn" id="resetBtn">Reset Score</button>
+ </section>
+ <section class="right-side-box" id="rightSideBox">
+   HAL 9000
+   <img class="hal-img" src="assets/hal.png" alt="hal">
+ </section>
+ <section class="rules-box">
+   <p>Classic Rules: </p>
+   <p>Rock beats Bruce</p>
+   <p>Chuck beats Rock</p>
+   <p>Bruce beats Chuck</p>
+ </section>
+ <section class="select-difficulty" id="selectDifficulty">Select Difficulty:
+ </section>
+ <input type="image" class="difficulty-hal-img" id="difficultyHalImg" src="assets/hal.png">
+ <input type="image" class="difficulty-t800-img" id="difficultyT800Img" src="assets/t800.png">
+ <p class="classic-text">Classic</p>
+ <p class="advanced-text">Advanced</p>
+ <section class="scoreboard" id="scoreboard">
+   <div class="player-label" id="playerLabel"></div>
+   <p class="mini-user-emoji" id="miniUserEmoji"></p>
+   <span class="player-score" id="playerScore"></span><span>:</span><span class="comp-score" id="compScore"></span>
+   <div class="hal-label" id="compLabel">HAL 9000</div>
+   <img class="mini-hal" src="assets/hal.png">
+ </section>
+ <div class="hero-text" id="chooseFighterText">Choose your Fighter!</div>
+ <section class="choices" id="choices">
+     <input type="image" class="img-btn" id="rock" src="assets/rock.png" alt="the rock">
+     <input type="image" class="img-btn" id="chuck" src="assets/chuck.png" alt="chuck">
+     <input type="image" class="img-btn" id="bruce" src="assets/bruce.png" alt="bruce">
+ </section>
+ <section class="hidden" id="playAgainSection">
+   <button input="button" class="play-again-btn" id="playAgainButton">Play Again!</button>
+ </section>
+ <section class="choice-img" id="choiceImg">
+ </section>
+<section class="win-screen" id="winScreen">
+</section>
+ <script type="module" src="main.js"></script>
 </body>
 </html>
+
