@@ -13,14 +13,12 @@ class Player {
     var wins = this.wins;
     var stringWins = JSON.stringify(wins);
     localStorage.setItem(this.name, stringWins);
-    console.log(stringWins)
   }
 
   retrieveWinsFromStorage() {
     var retrievedWins = localStorage.getItem(this.name);
     var parsedWins = JSON.parse(retrievedWins)
     return parsedWins;
-    console.log(parsedWins)
   }
   
   takeTurn() {
@@ -31,6 +29,6 @@ class Player {
   }
 }
 
-// module.exports = Player;
+
 export default Player;
 

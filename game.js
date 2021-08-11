@@ -18,7 +18,7 @@ class Game {
         img: './assets/bruce.png'
       }
     ]
-  }
+  };
 
   determineWinner(playerPick) {
     this.playerPick = playerPick;
@@ -28,22 +28,14 @@ class Game {
     || playerAndCompChoice === 'brucechuck') {
         this.humanPlayer.playerGetsOne();
         this.humanPlayer.saveWinsToStorage();
-        return `player`
+        return `player`;
       } else if (playerAndCompChoice === 'brucerock' || playerAndCompChoice === 'rockchuck' ||
         playerAndCompChoice === 'chuckbruce') {
           this.computerPlayer.playerGetsOne();
           this.computerPlayer.saveWinsToStorage();
-        return `computer`
+        return `computer`;
     } 
-
   }
-    
-  // determineDraw() {
-  //     if (this.playerPick === this.compPick) {
-  //       winner.innerHTML = 'Draw!'
-  //     }
-  //   }
-  
 }
 
 export default Game;

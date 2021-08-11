@@ -18,7 +18,6 @@
   height: 80px;
   padding: 20px;
   background-color: #0460D9;
-  
  }
   
  header h1 {
@@ -108,15 +107,13 @@
  .player-label {
   position: absolute;
   top: 40px;
-  /* left: 10px; */
-  }
+ }
   
  .hal-label {
   position: absolute;
   top: 40px;
   right: 4px;
  }
-  
   
  .scoreboard span {
   margin-right: 5px;
@@ -194,7 +191,6 @@
   background-color: #BF9004;
  }
   
-  
  .select-emoji {
   position: absolute;
   top: 200px;
@@ -208,6 +204,7 @@
   right:0;
   border-style: none none none solid;
  }
+
  .right-side-box img {
   width: 100px;
   position:absolute;
@@ -245,7 +242,7 @@
   
  .play-again-btn {
   position: absolute;
-  color: #F2CB05;
+  color: #530101;
   background-color: #BF9004;
   right: 300px;
   bottom: 200px;
