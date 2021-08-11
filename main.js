@@ -12,20 +12,23 @@ var rock = document.getElementById('rock');
 var chuck = document.getElementById('chuck');
 var bruce = document.getElementById('bruce');
 var threeImg = document.querySelectorAll('.img-btn');
-var choices = document.querySelector('#choices')
-var winner = document.getElementById('winScreen')
-// var choiceImgs = document.getElementById('choiceImgs');
-// var choiceImg = document.getElementById('choiceImg');
+var choices = document.querySelector('#choices');
+var winner = document.getElementById('winScreen');
 var compChoiceImg = document.getElementById('compChoiceImg');
 var choicesSection = document.getElementById('choicesSection');
 var chooseFighterText = document.getElementById('chooseFighterText')
 var playAgain = document.getElementById('playAgainButton');
 var playAgainSection = document.getElementById('playAgainSection');
- var choiceImg = document.getElementById('choiceImg')
+var choiceImg = document.getElementById('choiceImg')
+var resetScoreBtn = document.getElementById('resetBtn')
+
+
+
 //************EVENT LISTENERS******* */
 choices.addEventListener('click', startGame);
 window.addEventListener('keypress', changeName);
 playAgain.addEventListener('click', resetBoard);
+resetScoreBtn.addEventListener('click', resetScoreBoard)
 
 
 //**************FUNCTIONS********* */
@@ -40,6 +43,15 @@ function resetBoard() {
   bruce.hidden = false;
   playAgainSection.classList.add('hidden');
  }
+
+ function resetScoreBoard() {
+    localStorage.clear();
+    location.reload();
+}
+//  function resetScoreBoard() {
+//    localStorage.clear();
+//    location.reload();
+//  }
 
 function changeName(e) {
  if (e.key === 'Enter') {

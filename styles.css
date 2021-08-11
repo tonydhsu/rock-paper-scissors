@@ -84,7 +84,7 @@
  .scoreboard {
   position: relative;
   font-size: 20px;
-  width: 300px;
+  width: 350px;
   border: 2px solid #F25E6B;
   margin: 10px auto;
   border-radius: 10px;
@@ -166,6 +166,25 @@
   top: 80px;
   left: 20px;
  }
+
+ .reset-btn {
+   position: absolute;
+   top: 300px;
+   left: 20px;
+   width: 80px;
+   height:80px;
+   font-size: 25px;
+   background-color: #F2CB05;
+   color: #d90404;
+   border-radius: 50%;
+   border: none;
+   cursor:pointer;
+ }
+
+ .reset-btn:hover {
+  transform: scale(1.1);
+  transition: .5s;
+ }
   
  .name-input {
   color: #0460D9;
@@ -235,6 +254,11 @@
   border-radius: 50%;
   border: none;
   cursor:pointer;
+ }
+
+ .play-again-btn:hover {
+  transform: scale(1.1);
+  transition: .5s;
  }
   
  .hidden {

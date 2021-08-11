@@ -4,10 +4,6 @@ class Game {
   constructor() {
     this.computerPlayer = new Player("Hal 9000")
     this.humanPlayer = new Player("tony")
-    // this.playerPick = playerPick;
-    // this.compPick = compPick;
-    this.playerWins = 0;
-    this.compWins = 0;
     this.fighters = [
       {
         name: 'rock',
@@ -30,7 +26,6 @@ class Game {
     var playerAndCompChoice = this.playerPick + this.compPick;
     if (playerAndCompChoice === 'rockbruce' || playerAndCompChoice === 'chuckrock' 
     || playerAndCompChoice === 'brucechuck') {
-        // this.playerWins ++
         this.humanPlayer.playerGetsOne();
         this.humanPlayer.saveWinsToStorage();
         return `player`
@@ -38,7 +33,6 @@ class Game {
         playerAndCompChoice === 'chuckbruce') {
           this.computerPlayer.playerGetsOne();
           this.computerPlayer.saveWinsToStorage();
-        // this.compWins ++
         return `computer`
     } 
 
