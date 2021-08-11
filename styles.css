@@ -234,6 +234,7 @@
   height: 70px;
   border-radius: 50%;
   border: none;
+  cursor:pointer;
  }
   
  .hidden {
